@@ -2,7 +2,7 @@
 
 class CubeServo(object):
     def __init__(self,
-                 pwmObj, # pwm object to control all servos
+                 pwmObj, # pwm hat can control all servos to control all servos
                  channel, # pwm channel this servo is on
                  frequency=60,  # hertz
                  minExtremePulse=0.6,
@@ -34,6 +34,8 @@ class CubeServo(object):
         self.currentValue = None
 
 
+    # This method will set the servo to the value based on what the PWM hat requires.  in this case
+    # 12 bit number from 0 to 4095
     def setValue(self, value, force=False):
         if not force and value < self.getValueForPulse(self.minExtremePulse):
             print ("Error: value ({}) < self.minExtremePulse ({})".format(value, self.minExtremePulse))
