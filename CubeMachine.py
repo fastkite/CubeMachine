@@ -39,37 +39,53 @@ class CubeMachine(object):
     def presentTheCube(self):
         print("presentTheCube()")
         self.topSide.arm.setOut()
-        self.bottomSide.arm.setOut()
-        self.topSide.grip.setForward()
-        self.bottomSide.grip.setForward()
-        self.bottomSide.arm.setIn()
-        self.topSide.arm.setIn()
-        self.rightSide.arm.setOut()
         self.leftSide.arm.setOut()
-        self.rightSide.grip.setMiddle()
+        self.rightSide.arm.setOut()
+        self.bottomSide.arm.setOut()
+        self.bottomSide.grip.setForward()
         self.leftSide.grip.setMiddle()
-
+        self.rightSide.grip.setMiddle()
+        self.topSide.grip.setForward()
+        self.bottomSide.arm.setIn()
 
     def holdTheCube(self):
-        print("holdTheCube()")
-        self.topSide.arm.setOut()
-        self.bottomSide.arm.setOut()
-        self.topSide.grip.setForward()
-        self.bottomSide.grip.setForward()
-        self.bottomSide.arm.setIn()
         self.topSide.arm.setIn()
-        self.rightSide.arm.setIn()
-        self.leftSide.arm.setIn()
-        self.rightSide.grip.setMiddle()
-        self.leftSide.grip.setMiddle()
-
-    def rMove(self):
-        print("rMove()")
-        self.rightSide.grip.setForward()
+        print("holdTheCube()")
+        print('Please manually adjust the cube.')
+        input("Press Enter to continue...")
 
     def lMove(self):
-        print("lMove()")
+
+
+
+
+
+    def flipTheCubeUF(self):
+        print('FlipTHeCubeUF')
+        self.leftSide.arm.setOut()
+        self.rightSide.arm.setOut()
+        self.leftSide.grip.setMiddle()
+        self.rightSide.grip.setMiddle()
+        self.leftSide.arm.setIn()
+        self.rightSide.arm.setIn()
+        self.topSide.arm.setOut()
+        self.bottomSide.arm.setOut()
+        self.rightSide.grip.setBack(wait=False)
+        self.leftSide.grip.setForward()
+
+    def flipTheCubeDB(self):
+        print('FlipTHeCubeUF')
+        self.leftSide.arm.setOut()
+        self.rightSide.arm.setOut()
+        self.leftSide.grip.setMiddle()
+        self.rightSide.grip.setMiddle()
+        self.leftSide.arm.setIn()
+        self.rightSide.arm.setIn()
+        self.topSide.arm.setOut()
+        self.bottomSide.arm.setOut()
+        self.rightSide.grip.setForward(wait=False)
         self.leftSide.grip.setBack()
+
 
     def test(self):
         print("test()")
@@ -80,13 +96,6 @@ class CubeMachine(object):
         self.bottomSide.arm.setIn()
         self.topSide.arm.setIn()
 
-    def uMove(self):
-        print("uMove()")
-        self.topSide.grip.setMiddle()
-
-    def dMove(self):
-        print("dMove()")
-        self.bottomSide.grip.setMiddle()
 
 
 # arm test program
@@ -101,10 +110,8 @@ if __name__ == "__main__":
     input("Press Enter to continue...")
     machine.holdTheCube()
     time.sleep(1)
-    machine.uMove()
-    machine.dMove()
-    machine.rMove()
-    machine.lMove()
+
+
 
 
 
