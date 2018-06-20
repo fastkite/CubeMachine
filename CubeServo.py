@@ -165,7 +165,7 @@ if __name__ == "__main__":
     lblDegree = Label(root, text="Degree")
 
     scaleLocation = Scale(root, from_=0, to=4095, resolution=1, tickinterval=200, orient=HORIZONTAL,
-                          command=scaleChanged, var=varLocation, length=1000)
+                               command=scaleChanged, var=varLocation, length=1000)
 
     min = 150
     max = 600
